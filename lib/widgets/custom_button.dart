@@ -18,10 +18,10 @@ class CustomButton extends StatelessWidget {
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(buttonColor)),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
           child: Text(
             title,
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ),
         ));
   }

@@ -8,6 +8,8 @@ class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
+  Stream<User?> get authChanges => _auth.authStateChanges();
+
   Future<bool> signInWithGoogle(BuildContext context) async {
     bool res = false;
     // Trigger the authentication flow
@@ -40,7 +42,8 @@ class AuthMethods {
         res = true;
       }
     } on FirebaseAuthException catch (e) {
-      showSnackbar(context, e.toString());
+      // ignore: use_build_context_synchronously
+      showSnackbar(context, e.message!);
       res = false;
     }
     return res;
