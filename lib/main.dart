@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'pages/Home.dart';
+import 'package:zoom_clone/screens/login_screen.dart';
+import 'package:zoom_clone/utils/colors.dart';
+import 'package:zoom_clone/utils/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      title: 'Zoom Clone',
+      theme:
+          ThemeData.dark().copyWith(scaffoldBackgroundColor: backgroundColor),
+      routes: routes,
+      home: const LoginScreen(),
     );
   }
 }
